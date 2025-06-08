@@ -17,6 +17,10 @@ import YearCard from '../components/YearCard.astro';
         
         <section class="about-content">
             <div class="container">
+                <div class="additional-content">
+                    <p>우리는 전시 디자인의 혁신을 통해 고객의 브랜드 가치를 높이고, 방문객들에게 잊을 수 없는 경험을 제공합니다. 지속 가능한 디자인과 최첨단 기술을 결합하여, 미래 지향적인 전시 공간을 창조합니다. 모든 프로젝트에서 우리는 고객의 비전을 현실로 만들어내는 것을 목표로 합니다.</p>
+                </div>
+
                 <div class="years-grid">
                     <YearCard 
                         year="2010"
@@ -132,6 +136,21 @@ import YearCard from '../components/YearCard.astro';
         display: grid;
         gap: var(--spacing-8);
         grid-template-columns: 1fr;
+        margin-top: var(--spacing-16);
+    }
+    
+    .additional-content {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .additional-content p {
+        line-height: var(--line-height-relaxed);
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: var(--radius-2xl);
+        padding: var(--spacing-8);
     }
     
     @media (min-width: 48rem) {
