@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import SectionHeader from '../components/SectionHeader.astro';
-import YearCard from '../components/YearCard.astro';
+import Timeline from '../components/Timeline.astro';
 ---
 
 <Layout title="About Us - Mora Display">
@@ -21,90 +21,8 @@ import YearCard from '../components/YearCard.astro';
                     <p>우리는 전시 디자인의 혁신을 통해 고객의 브랜드 가치를 높이고, 방문객들에게 잊을 수 없는 경험을 제공합니다. 지속 가능한 디자인과 최첨단 기술을 결합하여, 미래 지향적인 전시 공간을 창조합니다. 모든 프로젝트에서 우리는 고객의 비전을 현실로 만들어내는 것을 목표로 합니다.</p>
                 </div>
 
-                <div class="years-grid">
-                    <YearCard 
-                        year="2010"
-                        title="The Beginning"
-                        description="Founded in London with a vision to revolutionize exhibition stand design. Started with a small team of 3 passionate designers working from a converted warehouse in East London."
-                        highlight="First major project: Tech Innovation Expo"
-                    />
-                    
-                    <YearCard 
-                        year="2012"
-                        title="First Growth"
-                        description="Expanded our team to 8 professionals and secured our first major corporate client. Developed our signature modular design system that would become industry standard."
-                        highlight="Modular design system launched"
-                    />
-                    
-                    <YearCard 
-                        year="2013"
-                        title="Growing Recognition"
-                        description="Expanded to a team of 15 professionals and won our first industry award for 'Best Interactive Stand Design' at the International Design Awards."
-                        highlight="Award: Best Interactive Stand Design"
-                    />
-                    
-                    <YearCard 
-                        year="2015"
-                        title="Digital Integration"
-                        description="Began incorporating digital technologies into our designs. Launched our first augmented reality exhibition experience for a major automotive client."
-                        highlight="First AR exhibition launched"
-                    />
-                    
-                    <YearCard 
-                        year="2016"
-                        title="International Expansion"
-                        description="Opened our second office in Berlin and began serving clients across Europe. Launched our sustainable design initiative, becoming carbon-neutral in all projects."
-                        highlight="Carbon-neutral certification achieved"
-                    />
-                    
-                    <YearCard 
-                        year="2018"
-                        title="Innovation Lab"
-                        description="Established our dedicated R&D department focused on emerging technologies. Developed partnerships with leading tech companies to integrate cutting-edge solutions."
-                        highlight="R&D lab established"
-                    />
-                    
-                    <YearCard 
-                        year="2019"
-                        title="Digital Innovation"
-                        description="Pioneered the integration of AR/VR technologies in exhibition stands. Developed proprietary software for real-time stand customization and virtual client walkthroughs."
-                        highlight="100+ AR/VR installations completed"
-                    />
-                    
-                    <YearCard 
-                        year="2020"
-                        title="Resilience & Adaptation"
-                        description="Faced the global pandemic head-on by rapidly developing virtual and hybrid exhibition solutions. Helped clients maintain their presence during challenging times."
-                        highlight="Virtual solutions for 200+ clients"
-                    />
-                    
-                    <YearCard 
-                        year="2021"
-                        title="Pandemic Innovation"
-                        description="Quickly pivoted to hybrid and virtual exhibition solutions during COVID-19. Created innovative contactless interaction systems and virtual showroom experiences."
-                        highlight="500+ virtual events delivered"
-                    />
-                    
-                    <YearCard 
-                        year="2022"
-                        title="Global Recognition"
-                        description="Received multiple international awards for our innovative virtual exhibition platforms. Opened our third office in Amsterdam to serve the Netherlands market."
-                        highlight="International Design Excellence Award"
-                    />
-                    
-                    <YearCard 
-                        year="2023"
-                        title="AI Integration"
-                        description="Launched our AI-powered design assistant that helps clients visualize and customize their exhibition stands in real-time. Revolutionized the design process."
-                        highlight="AI design tool with 1000+ users"
-                    />
-                    
-                    <YearCard 
-                        year="2024"
-                        title="Future Forward"
-                        description="Today, we're a team of 50+ specialists serving clients globally. Leading the industry with AI-powered design tools and sustainable, modular exhibition solutions."
-                        highlight="50+ team members worldwide"
-                    />
+                <div class="timeline-container">
+                    <Timeline />
                 </div>
             </div>
         </section>
@@ -132,13 +50,6 @@ import YearCard from '../components/YearCard.astro';
         margin: 0 auto;
     }
     
-    .years-grid {
-        display: grid;
-        gap: var(--spacing-8);
-        grid-template-columns: 1fr;
-        margin-top: var(--spacing-16);
-    }
-    
     .additional-content {
         text-align: center;
         max-width: 800px;
@@ -151,17 +62,5 @@ import YearCard from '../components/YearCard.astro';
         border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: var(--radius-2xl);
         padding: var(--spacing-8);
-    }
-    
-    @media (min-width: 48rem) {
-        .years-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-    
-    @media (min-width: 64rem) {
-        .years-grid {
-            grid-template-columns: repeat(3, 1fr);
-        }
     }
 </style>
