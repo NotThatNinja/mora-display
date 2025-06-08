@@ -1,7 +1,7 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import SectionHeader from '../components/SectionHeader.astro';
-import Timeline from '../components/Timeline.astro';
+import Layout from "../layouts/Layout.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import Timeline from "../components/Timeline.astro";
 ---
 
 <Layout title="About Us - Mora Display">
@@ -9,16 +9,46 @@ import Timeline from '../components/Timeline.astro';
         <section class="about-hero">
             <div class="container">
                 <SectionHeader
-                    title="Our Complete Journey"
-                    subtitle="From a small London studio to an international exhibition design powerhouse. Every milestone that shaped our passion for creating extraordinary experiences."
+                    title="Our Full Journey"
+                    subtitle="A decade-long pursuit of creative and high-quality exhibition design solutions."
                 />
             </div>
         </section>
-        
+
         <section class="about-content">
             <div class="container">
                 <div class="additional-content">
-                    <p>우리는 전시 디자인의 혁신을 통해 고객의 브랜드 가치를 높이고, 방문객들에게 잊을 수 없는 경험을 제공합니다. 지속 가능한 디자인과 최첨단 기술을 결합하여, 미래 지향적인 전시 공간을 창조합니다. 모든 프로젝트에서 우리는 고객의 비전을 현실로 만들어내는 것을 목표로 합니다.</p>
+                    <p>
+                        MORA DISPLAY is a full service exhibition stand design
+                        and build company from Milan, Italy. Startup members of
+                        MORA DISPLAY graduated from the Department of
+                        Construction Engineering and Interior Design,
+                        Politecnico di Milano. Since 2005, we have been involved
+                        in exhibition stand design and stand construction
+                        producing the highest quality exhibition stand not only
+                        mainly in Italy, France, Germany, Spain and all over the
+                        Europe but also South Korea, China, and USA. Our
+                        accomplished project management team ensures the clean
+                        running of each project, and work closely with clients
+                        to keep them at the forefront of every decision.
+                    </p>
+                    <p>
+                        전시회 기획 및 설치 전문 회사인 MORA DISPLAY는 2005년
+                        말, 밀라노 공과대학 건축 전공 및 인테리어 디스플레이
+                        디자인학과 출신들로 구성되어 유럽의 중심 MILANO에서
+                        설립되었습니다. 2010년 다양한 한국 업체들의 요구조건에
+                        부응하고자 한국 모라디스플레이를 추가로 설립하였고
+                        이탈리아, 독일, 프랑스, 스페인, 북유럽의 다년간 경험과
+                        노하우를 가지고 전 유럽의 다양한 전시와 전시회에 관련된
+                        모든 행사를 기획, 설치하였습니다. 현재 유럽 뿐만 아니라
+                        한국, 아시아, 러시아,미국을 포함한 전 세계적인
+                        영역확장을 위해 국내외 디자인 시공 팀 과의 긴밀한
+                        네트워크를 형성하여 세계적인 도약을 준비하고 있습니다.
+                        무엇보다 영어 이탈리아어 독일어 등 언어적인 능력을
+                        바탕으로 디자인에서 부터 제작 및 시공의 디테일한 감리와
+                        현장 진행 및 행정 업무의 정확한 서포트가 가능한 장점을
+                        가지고 있습니다.
+                    </p>
                 </div>
 
                 <div class="timeline-container">
@@ -31,36 +61,63 @@ import Timeline from '../components/Timeline.astro';
 
 <style>
     .about-hero {
-        padding: calc(var(--header-height) + var(--spacing-16)) var(--spacing-4) var(--spacing-16);
-        background: 
-            radial-gradient(circle at 30% 70%, rgba(129, 99, 255, 0.08) 0%, transparent 50%),
-            radial-gradient(circle at 70% 30%, rgba(66, 165, 245, 0.06) 0%, transparent 50%),
+        padding: calc(var(--header-height) + var(--spacing-16)) var(--spacing-4)
+            var(--spacing-16);
+        background: radial-gradient(
+                circle at 30% 70%,
+                rgba(129, 99, 255, 0.08) 0%,
+                transparent 50%
+            ),
+            radial-gradient(
+                circle at 70% 30%,
+                rgba(66, 165, 245, 0.06) 0%,
+                transparent 50%
+            ),
             var(--color-black);
     }
-    
+
     .about-content {
-        background: 
-            radial-gradient(circle at 10% 20%, rgba(255, 193, 7, 0.04) 0%, transparent 50%),
-            radial-gradient(circle at 90% 80%, rgba(76, 175, 80, 0.06) 0%, transparent 50%),
+        background: radial-gradient(
+                circle at 10% 20%,
+                rgba(255, 193, 7, 0.04) 0%,
+                transparent 50%
+            ),
+            radial-gradient(
+                circle at 90% 80%,
+                rgba(76, 175, 80, 0.06) 0%,
+                transparent 50%
+            ),
             var(--color-black);
     }
-    
+
     .container {
         max-width: 1400px;
         margin: 0 auto;
     }
-    
+
     .additional-content {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-4);
         text-align: center;
-        max-width: 800px;
         margin: 0 auto;
     }
     .additional-content p {
         line-height: var(--line-height-relaxed);
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+        background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.05) 0%,
+            rgba(255, 255, 255, 0.02) 100%
+        );
         backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: var(--radius-2xl);
         padding: var(--spacing-8);
+    }
+
+    @media (min-width: 64rem) {
+        .additional-content {
+            flex-direction: row;;
+        }
     }
 </style>

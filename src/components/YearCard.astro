@@ -9,7 +9,13 @@ const { year, title, description, highlight, timelineUsage = false } = Astro.pro
     </div>
     
     <div class="year-content">
-        <p>{description}</p>
+        <div class="description-container">
+            <p class="description-text">{description}</p>
+            <button class="read-more-btn" style="display: none;">
+                <span>Read more</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+        </div>
         <div class="highlight">
             <i class="fa-solid fa-trophy"></i>
             <span>{highlight}</span>
@@ -108,6 +114,36 @@ const { year, title, description, highlight, timelineUsage = false } = Astro.pro
         font-size: var(--font-size-sm);
         font-weight: var(--font-weight-medium);
     }
+
+    .description-container {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-2);
+    }
+
+    .read-more-btn {
+        background: none;
+        border: none;
+        color: var(--color-accent);
+        font-size: var(--font-size-sm);
+        font-weight: var(--font-weight-medium);
+        cursor: pointer;
+        padding: 0;
+        align-self: flex-start;
+        transition: color 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-1);
+    }
+
+    .read-more-btn:hover {
+        color: rgba(var(--color-accent-rgb), 0.8);
+    }
+
+    .read-more-btn i {
+        transition: transform 0.3s ease;
+        font-size: var(--font-size-xs);
+    }
     
     @media (min-width: 48rem) {
         .timeline-card {
@@ -131,3 +167,65 @@ const { year, title, description, highlight, timelineUsage = false } = Astro.pro
         }
     }
 </style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const cards = document.querySelectorAll('.year-card');
+        let expandedCard = null;
+        
+        cards.forEach(card => {
+            const descriptionText = card.querySelector('.description-text');
+            const readMoreBtn = card.querySelector('.read-more-btn');
+            
+            const fullText = descriptionText.textContent;
+            const maxChars = 150;
+            
+            if (fullText.length > maxChars) {
+                const truncatedText = fullText.substring(0, maxChars) + '...';
+                const textSpan = readMoreBtn.querySelector('span');
+                const icon = readMoreBtn.querySelector('i');
+                
+                descriptionText.textContent = truncatedText;
+                readMoreBtn.style.display = 'flex';
+                
+                readMoreBtn.addEventListener('click', function() {
+                    // Collapse previously expanded card
+                    if (expandedCard && expandedCard !== card) {
+                        const prevDescText = expandedCard.querySelector('.description-text');
+                        const prevBtn = expandedCard.querySelector('.read-more-btn');
+                        const prevTextSpan = prevBtn.querySelector('span');
+                        const prevIcon = prevBtn.querySelector('i');
+                        const prevFullText = prevDescText.dataset.fullText;
+                        const prevTruncatedText = prevFullText.substring(0, maxChars) + '...';
+                        
+                        prevDescText.textContent = prevTruncatedText;
+                        prevTextSpan.textContent = 'Read more';
+                        prevIcon.classList.remove('fa-chevron-up');
+                        prevIcon.classList.add('fa-chevron-down');
+                        prevBtn.classList.remove('expanded');
+                    }
+                    
+                    // Toggle current card
+                    if (readMoreBtn.classList.contains('expanded')) {
+                        descriptionText.textContent = truncatedText;
+                        textSpan.textContent = 'Read more';
+                        icon.classList.remove('fa-chevron-up');
+                        icon.classList.add('fa-chevron-down');
+                        readMoreBtn.classList.remove('expanded');
+                        expandedCard = null;
+                    } else {
+                        descriptionText.textContent = fullText;
+                        textSpan.textContent = 'Read less';
+                        icon.classList.remove('fa-chevron-down');
+                        icon.classList.add('fa-chevron-up');
+                        readMoreBtn.classList.add('expanded');
+                        expandedCard = card;
+                    }
+                });
+                
+                // Store full text for later use
+                descriptionText.dataset.fullText = fullText;
+            }
+        });
+    });
+</script>
