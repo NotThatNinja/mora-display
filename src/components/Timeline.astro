@@ -1,215 +1,591 @@
 ---
-import YearCard from './YearCard.astro';
+const timelineData = [
+    { year: "2005", title: "Milano Foundation", highlight: "Established MORADISPLAY in Milano", description: "In this year, we initiated our journey with a foundational project in Italy: Established MORADISPLAY in Milano" },
+    { year: "2008", title: "High-Profile Interiors", highlight: "Hyosung, Hyundai, Korean Air, KOSHI KOBAN projects", description: "This year marked several high-profile interior design and construction projects: Hyosung Milano, branch interior design and construction; Hyundai Milano, branch interior design and construction; Korean Air Line in Milano, office furniture design and install; KOSHI KOBAN in Milano, branch interior design and construction." },
+    { year: "2009", title: "International Expansion", highlight: "Multiple international exhibition booths", description: "We expanded into numerous international exhibitions and booth constructions: MIDO in Milano, SILMO in Paris, LuxePack in Monaco, MadeF in Milano, Salone del Mobile in Milano, Cosmopack.prof. in Bologna, Enersol in Milano, MEDICA in Düsseldorf." },
+    { year: "2010", title: "Korea Expansion", highlight: "Established MORADISPLAY in Korea", description: "This year, we expanded our base to Korea: Established MORADISPLAY in Korea" },
+    { year: "2011", title: "European Projects", highlight: "Major European exhibition projects", description: "We led several design and booth construction projects across Europe: MIDO in Milano, Cosmopack.prof. in Bologna (KOREAN PAVILION and individual booths), SILMO in Paris, Fotovoltaic in Valencia, HOTEL in Venezia, ICT Roadshow in Milano, Korea preview in Milano, Passion show installation management." },
+    { year: "2012", title: "Pavilion Success", highlight: "Ecofriendly and international pavilions", description: "Continued success in pavilion and display booth construction: MIDO in Milano, Cosmopack.prof. in Bologna, CPHI in Spain (Dowachem), OUTDOOR in Friedrichshafen, ESCR in Milano, Korea preview in Milano (Ecofriendly stand), SILMO in Paris, Premiere Vision in Paris." },
+    { year: "2013", title: "Ecofriendly Emphasis", highlight: "Sustainable booth innovations", description: "This year we emphasized sustainable and ecofriendly booths: ISPO in Munchen, MIDO in Milano, Cosmopack.prof. in Bologna, Korea preview in Milano, SILMO in Paris, Premiere Vision in Paris, FABRICSTART in Munchen, OUTDOOR in Friedrichshafen." },
+    { year: "2014", title: "Global Innovation", highlight: "Innovative global booth designs", description: "We took part in numerous global exhibitions with innovative booth designs: ISPO in Munchen, MIDO in Milano, Cosmopack.prof. in Bologna, Korean Pavilion in Frankfurt and Spain, EMO in Milano, IDS in Köln, MEDICA in Düsseldorf, SILMO in Paris, FABRICSTART in Munchen." },
+    { year: "2015", title: "Dynamic Growth", highlight: "Dynamic design and pavilion growth", description: "A dynamic year of design, exhibitions, and pavilion construction: ISPO in Munchen, MIDO in Milano, FABRICSTART in Munchen, AMWC in Monte Carlo, Cosmoprof. in Bologna, ACHEMA in Frankfurt, OUTDOOR in Friedrichshafen, ADF CONGRESS in Paris, UNICA MILANO, IFMA in Monaco." },
+    { year: "2016", title: "European & Asian Presence", highlight: "Broadened European and Asian reach", description: "We participated in several exhibitions across Europe and Asia: ISPO in Munchen, UNICA MILANO, MIDO in Milano, Cosmopack.prof. in Bologna, AMWC in Monte Carlo, ECR in Vienna, SMM in Hamburg, BAUMA in Munchen, EASD in Munchen, WCN in Kyoto, ISUOG in Roma, SILMO in Paris, EUROSPINE in Berlin, CPHI in Barcelona, MEDICA in Düsseldorf, UVHVS in Firenze." },
+    { year: "2017", title: "Medical & Tech Focus", highlight: "Medical, industrial, and tech events", description: "We supported medical, industrial, and tech-focused exhibitions: ISPO in Munchen, MIDO in Milano, Cosmopack.prof. in Bologna, IDS in Köln, AMWC in Monte Carlo, EWMA in Netherlands, OUTDOOR in Friedrichshafen, EASD in Lisbon, EMO in Hannover, ESCRS in Lisbon, EUROSPINE in Dublin, Sopra della Corea in Milano, CPHI world symposium in Barcelona, CPHI in Frankfurt, MEDICA in Düsseldorf, VIE and MAD in Düsseldorf, WHITE Show in Milano, Taste of Korea in Napoli." },
+    { year: "2018", title: "Cultural & Fashion Events", highlight: "Cultural, fashion, and food exhibitions", description: "Our projects extended to cultural, fashion, and food-related events: ISPO in Munchen, AMBIENTE in Frankfurt, MIDO in Milano, Cosmopack.prof. in Bologna, ECR in Vienna, BOOKFAIR in Leipzig, SILMO in Paris, AMWC in Monte Carlo." }
+];
 ---
 
-<div class="timeline">
-    <div class="timeline-track">
-        <YearCard timelineUsage year="2005" title="Milano Foundation" highlight="Established MORADISPLAY in Milano" description="In this year, we initiated our journey with a foundational project in Italy: Established MORADISPLAY in Milano" />
-        <YearCard timelineUsage year="2008" title="High-Profile Interiors" highlight="Hyosung, Hyundai, Korean Air, KOSHI KOBAN projects" description="This year marked several high-profile interior design and construction projects: Hyosung Milano, branch interior design and construction; Hyundai Milano, branch interior design and construction; Korean Air Line in Milano, office furniture design and install; KOSHI KOBAN in Milano, branch interior design and construction." />
-        <YearCard timelineUsage year="2009" title="International Expansion" highlight="Multiple international exhibition booths" description="We expanded into numerous international exhibitions and booth constructions: MIDO in Milano, SILMO in Paris, LuxePack in Monaco, MadeF in Milano, Salone del Mobile in Milano, Cosmopack.prof. in Bologna, Enersol in Milano, MEDICA in Düsseldorf." />
-        <YearCard timelineUsage year="2010" title="Korea Expansion" highlight="Established MORADISPLAY in Korea" description="This year, we expanded our base to Korea: Established MORADISPLAY in Korea" />
-        <YearCard timelineUsage year="2011" title="European Projects" highlight="Major European exhibition projects" description="We led several design and booth construction projects across Europe: MIDO in Milano, Cosmopack.prof. in Bologna (KOREAN PAVILION and individual booths), SILMO in Paris, Fotovoltaic in Valencia, HOTEL in Venezia, ICT Roadshow in Milano, Korea preview in Milano, Passion show installation management." />
-        <YearCard timelineUsage year="2012" title="Pavilion Success" highlight="Ecofriendly and international pavilions" description="Continued success in pavilion and display booth construction: MIDO in Milano, Cosmopack.prof. in Bologna, CPHI in Spain (Dowachem), OUTDOOR in Friedrichshafen, ESCR in Milano, Korea preview in Milano (Ecofriendly stand), SILMO in Paris, Premiere Vision in Paris." />
-        <YearCard timelineUsage year="2013" title="Ecofriendly Emphasis" highlight="Sustainable booth innovations" description="This year we emphasized sustainable and ecofriendly booths: ISPO in Munchen, MIDO in Milano, Cosmopack.prof. in Bologna, Korea preview in Milano, SILMO in Paris, Premiere Vision in Paris, FABRICSTART in Munchen, OUTDOOR in Friedrichshafen." />
-        <YearCard timelineUsage year="2014" title="Global Innovation" highlight="Innovative global booth designs" description="We took part in numerous global exhibitions with innovative booth designs: ISPO in Munchen, MIDO in Milano, Cosmopack.prof. in Bologna, Korean Pavilion in Frankfurt and Spain, EMO in Milano, IDS in Köln, MEDICA in Düsseldorf, SILMO in Paris, FABRICSTART in Munchen." />
-        <YearCard timelineUsage year="2015" title="Dynamic Growth" highlight="Dynamic design and pavilion growth" description="A dynamic year of design, exhibitions, and pavilion construction: ISPO in Munchen, MIDO in Milano, FABRICSTART in Munchen, AMWC in Monte Carlo, Cosmoprof. in Bologna, ACHEMA in Frankfurt, OUTDOOR in Friedrichshafen, ADF CONGRESS in Paris, UNICA MILANO, IFMA in Monaco." />
-        <YearCard timelineUsage year="2016" title="European & Asian Presence" highlight="Broadened European and Asian reach" description="We participated in several exhibitions across Europe and Asia: ISPO in Munchen, UNICA MILANO, MIDO in Milano, Cosmopack.prof. in Bologna, AMWC in Monte Carlo, ECR in Vienna, SMM in Hamburg, BAUMA in Munchen, EASD in Munchen, WCN in Kyoto, ISUOG in Roma, SILMO in Paris, EUROSPINE in Berlin, CPHI in Barcelona, MEDICA in Düsseldorf, UVHVS in Firenze." />
-        <YearCard timelineUsage year="2017" title="Medical & Tech Focus" highlight="Medical, industrial, and tech events" description="We supported medical, industrial, and tech-focused exhibitions: ISPO in Munchen, MIDO in Milano, Cosmopack.prof. in Bologna, IDS in Köln, AMWC in Monte Carlo, EWMA in Netherlands, OUTDOOR in Friedrichshafen, EASD in Lisbon, EMO in Hannover, ESCRS in Lisbon, EUROSPINE in Dublin, Sopra della Corea in Milano, CPHI world symposium in Barcelona, CPHI in Frankfurt, MEDICA in Düsseldorf, VIE and MAD in Düsseldorf, WHITE Show in Milano, Taste of Korea in Napoli." />
-        <YearCard timelineUsage year="2018" title="Cultural & Fashion Events" highlight="Cultural, fashion, and food exhibitions" description="Our projects extended to cultural, fashion, and food-related events: ISPO in Munchen, AMBIENTE in Frankfurt, MIDO in Milano, Cosmopack.prof. in Bologna, ECR in Vienna, BOOKFAIR in Leipzig, SILMO in Paris, AMWC in Monte Carlo." />
+<div class="timeline-container">
+    <!-- Timeline Line with Years -->
+    <div class="timeline-line-wrapper">
+        <div class="timeline-line-container">
+            <div class="timeline-line"></div>
+            <div class="timeline-years">
+                {timelineData.map((item, index) => (
+                    <button
+                        type="button"
+                        class={`timeline-year ${index === 0 ? 'active' : ''}`}
+                        data-year={item.year}
+                        data-index={index}
+                    >
+                        <span class="year-label">{item.year}</span>
+                    </button>
+                ))}
+            </div>
+        </div>
+        
+        <!-- Navigation buttons for mobile -->
+        <button type="button" class="timeline-nav prev-nav">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button type="button" class="timeline-nav next-nav">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
     </div>
 
-    <div class="timeline-dots" id="timeline-dots">
-        <!-- Dots will be generated dynamically -->
+    <!-- Content Display -->
+    <div class="timeline-content">
+        <div class="content-wrapper">
+            {timelineData.map((item, index) => (
+                <div 
+                    class={`timeline-content-item ${index === 0 ? 'active' : ''}`}
+                    data-year={item.year}
+                >
+                    <div class="content-header">
+                        <div class="content-year">{item.year}</div>
+                        <h3 class="content-title">{item.title}</h3>
+                    </div>
+                    
+                    <div class="content-body">
+                        <p class="content-description">{item.description}</p>
+                        <div class="content-highlight">
+                            <i class="fa-solid fa-trophy"></i>
+                            <span>{item.highlight}</span>
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </div>
     </div>
-
-    <button type="button" class="timeline-btn prev">
-        <i class="fa-solid fa-chevron-left"></i>
-    </button>
-    <button type="button" class="timeline-btn next">
-        <i class="fa-solid fa-chevron-right"></i>
-    </button>
 </div>
 
-<style is:global>
-    .timeline-dots {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        gap: var(--spacing-2);
-    }
-    .timeline-dots button {
-        width: 8px;
-        height: 8px;
-        border-radius: var(--radius-full);
-        border: none;
-        background: rgba(255, 255, 255, 0.3);
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-    .timeline-dots button:hover {
-        background: rgba(255, 255, 255, 0.6);
-        transform: scale(1.1);
-    }
-    .timeline-dots button.active {
-        background: var(--color-accent);
-        transform: scale(1.2);
-    }
-</style>
-
 <style>
-    .timeline {
+    .timeline-container {
         position: relative;
         width: 100%;
-        max-width: 1750px;
+        max-width: 1400px;
         margin: 0 auto;
-        padding: var(--spacing-1) var(--spacing-8);
+        padding: var(--spacing-8) var(--spacing-4);
+    }
+
+    /* Timeline Line Section */
+    .timeline-line-wrapper {
+        position: relative;
+        margin-bottom: var(--spacing-12);
         overflow: hidden;
+        padding: var(--spacing-8) 0;
     }
 
-    .timeline-track {
-        display: flex;
-        padding: 2rem 0;
-        gap: var(--spacing-6);
-        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    .timeline-line-container {
+        position: relative;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        padding: var(--spacing-4) 0;
+        /* Hide scrollbar on webkit browsers */
+        -ms-overflow-style: none;
+        scrollbar-width: none;
     }
 
-    .timeline-btn {
-        z-index: 1;
+    .timeline-line-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .timeline-line {
         position: absolute;
-        width: 40px;
-        height: 40px;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, 
+            transparent 0%, 
+            rgba(var(--color-accent-rgb), 0.3) 10%, 
+            var(--color-accent) 50%, 
+            rgba(var(--color-accent-rgb), 0.3) 90%, 
+            transparent 100%);
+        transform: translateY(-50%);
+        z-index: 1;
+    }
+
+    .timeline-years {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+        min-width: 100%;
+        gap: var(--spacing-2);
+    }
+
+    .timeline-year {
+        position: relative;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: var(--radius-xl);
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-1);
+        padding: var(--spacing-3) var(--spacing-2);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        flex-shrink: 0;
+        min-width: 90px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .year-label {
+        font-size: var(--font-size-sm);
+        font-weight: var(--font-weight-bold);
+        color: rgba(255, 255, 255, 0.8);
+        transition: all 0.3s ease;
+        white-space: nowrap;
+    }
+
+    .year-dot {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.4);
+        border: 2px solid rgba(255, 255, 255, 0.6);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        z-index: 3;
+    }
+
+    .year-dot::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 8px;
+        height: 8px;
+        background: var(--color-accent);
+        border-radius: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .timeline-year:hover {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%);
+        border-color: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .timeline-year:hover .year-label {
+        color: var(--color-white);
+    }
+
+    .timeline-year:hover .year-dot {
+        background: rgba(var(--color-accent-rgb), 0.3);
+        border-color: var(--color-accent);
+        transform: scale(1.1);
+    }
+
+    .timeline-year.active {
+        background: linear-gradient(135deg, var(--color-accent) 0%, rgba(var(--color-accent-rgb), 0.8) 100%);
+        border-color: var(--color-accent);
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(var(--color-accent-rgb), 0.4);
+    }
+
+    .timeline-year.active .year-label {
+        color: var(--color-white);
+        font-size: var(--font-size-base);
+        font-weight: var(--font-weight-bold);
+    }
+
+    .timeline-year.active .year-dot {
+        background: var(--color-white);
+        border-color: var(--color-white);
+        transform: scale(1.2);
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+    }
+
+    .timeline-year.active .year-dot::before {
+        background: var(--color-accent);
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    /* Navigation Buttons */
+    .timeline-nav {
+        position: absolute;
         top: 50%;
         transform: translateY(-50%);
+        width: 36px;
+        height: 36px;
         border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: var(--radius-full);
-        background: rgba(0, 0, 0, 0.6);
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.7);
         backdrop-filter: blur(10px);
         color: var(--color-white);
         cursor: pointer;
         transition: all 0.3s ease;
-        opacity: 0.8;
+        z-index: 3;
+        display: none;
     }
-    .timeline-btn:hover {
-        opacity: 1;
+
+    .timeline-nav:hover {
         background: rgba(255, 255, 255, 0.1);
         border-color: rgba(255, 255, 255, 0.3);
         transform: translateY(-50%) scale(1.1);
     }
-    .timeline-btn.prev {
-        left: 0.25rem;
-    }
-    .timeline-btn.next {
-        right: 0.25rem;
+
+    .prev-nav {
+        left: var(--spacing-2);
     }
 
-    @media (min-width: 48rem) {
-        .timeline {
-            padding: var(--spacing-20);
+    .next-nav {
+        right: var(--spacing-2);
+    }
+
+    /* Content Section */
+    .timeline-content {
+        position: relative;
+        min-height: 300px;
+    }
+
+    .content-wrapper {
+        position: relative;
+    }
+
+    .timeline-content-item {
+        display: none;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.04) 100%);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: var(--radius-2xl);
+        padding: var(--spacing-8);
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        animation: slideInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .timeline-content-item.active {
+        display: block;
+    }
+
+    .timeline-content-item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
+    .content-header {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-6);
+        margin-bottom: var(--spacing-6);
+    }
+
+    .content-year {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, var(--color-accent) 0%, rgba(var(--color-accent-rgb), 0.8) 100%);
+        border-radius: var(--radius-xl);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: var(--font-size-xl);
+        font-weight: var(--font-weight-bold);
+        color: var(--color-white);
+        box-shadow: 0 8px 25px rgba(var(--color-accent-rgb), 0.4);
+        flex-shrink: 0;
+    }
+
+    .content-title {
+        font-size: var(--font-size-2xl);
+        font-weight: var(--font-weight-bold);
+        color: var(--color-white);
+        margin: 0;
+    }
+
+    .content-body {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-6);
+    }
+
+    .content-description {
+        color: rgba(255, 255, 255, 0.9);
+        line-height: var(--line-height-relaxed);
+        font-size: var(--font-size-base);
+        margin: 0;
+    }
+
+    .content-highlight {
+        display: inline-flex;
+        width: fit-content;
+        align-items: center;
+        gap: var(--spacing-3);
+        padding: var(--spacing-3) var(--spacing-6);
+        background: rgba(var(--color-accent-rgb), 0.15);
+        border: 1px solid rgba(var(--color-accent-rgb), 0.3);
+        border-radius: var(--radius-full);
+        color: var(--color-accent);
+        font-size: var(--font-size-sm);
+        font-weight: var(--font-weight-medium);
+    }
+
+    /* Animations */
+    @keyframes slideInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .timeline-nav {
+            display: block;
         }
 
-        .timeline-btn {
-            width: 48px;
-            height: 48px;
+        .timeline-line-container {
+            padding: var(--spacing-6) var(--spacing-12);
         }
-        
-        .timeline-dots button {
+
+        .timeline-line {
+            display: none;
+        }
+
+        .timeline-years {
+            justify-content: flex-start;
+            min-width: max-content;
+            padding: 0;
+            gap: var(--spacing-4);
+        }
+
+        .timeline-year {
+            min-width: 100px;
+            padding: var(--spacing-4) var(--spacing-3);
+        }
+
+        .year-dot {
+            width: 18px;
+            height: 18px;
+        }
+
+        .year-dot::before {
             width: 10px;
             height: 10px;
+        }
+
+        .content-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: var(--spacing-4);
+        }
+
+        .content-year {
+            width: 60px;
+            height: 60px;
+            font-size: var(--font-size-lg);
+        }
+
+        .content-title {
+            font-size: var(--font-size-xl);
+        }
+
+        .timeline-container {
+            padding: var(--spacing-6) var(--spacing-2);
+        }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+        .timeline-years {
+            gap: var(--spacing-3);
+        }
+
+        .timeline-year {
+            min-width: 85px;
+            padding: var(--spacing-3) var(--spacing-2);
+        }
+
+        .year-label {
+            font-size: var(--font-size-sm);
+        }
+
+        .content-year {
+            width: 70px;
+            height: 70px;
+            font-size: var(--font-size-lg);
+        }
+
+        .content-title {
+            font-size: var(--font-size-xl);
+        }
+    }
+
+    @media (min-width: 1025px) {
+        .content-header {
+            gap: var(--spacing-8);
+        }
+
+        .content-year {
+            width: 100px;
+            height: 100px;
+            font-size: var(--font-size-2xl);
+        }
+
+        .content-title {
+            font-size: var(--font-size-3xl);
         }
     }
 </style>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const timelines = document.querySelectorAll('.timeline');
-        
-        timelines.forEach(timeline => {
-            const track = timeline.querySelector('.timeline-track');
-            const cards = timeline.querySelectorAll('.timeline-card');
-            const prevBtn = timeline.querySelector('.prev');
-            const nextBtn = timeline.querySelector('.next');
-            const dotsContainer = timeline.querySelector('.timeline-dots');
-            
-            let currentCard = 0;
-            
-            function getVisibleCards() {
-                if (window.innerWidth >= 1024) return 3; // Desktop
-                if (window.innerWidth >= 768) return 2;  // Tablet
-                return 1; // Mobile
+        const timelineContainer = document.querySelector('.timeline-container');
+        if (!timelineContainer) return;
+
+        const timelineLineContainer = timelineContainer.querySelector('.timeline-line-container');
+        const yearButtons = timelineContainer.querySelectorAll('.timeline-year');
+        const contentItems = timelineContainer.querySelectorAll('.timeline-content-item');
+        const prevNav = timelineContainer.querySelector('.prev-nav');
+        const nextNav = timelineContainer.querySelector('.next-nav');
+
+        let currentIndex = 0;
+        let isTransitioning = false;
+
+        // Initialize timeline
+        function init() {
+            if (yearButtons.length > 0 && contentItems.length > 0) {
+                showContent(0);
+                updateNavButtons();
             }
+        }
+
+        // Show content for specific index
+        function showContent(index) {
+            if (isTransitioning || index < 0 || index >= contentItems.length) return;
             
-            function createDots() {
-                const visibleCards = getVisibleCards();
-                const maxSlides = cards.length - visibleCards;
-                
-                // Clear existing dots
-                dotsContainer.innerHTML = '';
-                
-                // Create new dots
-                for (let i = 0; i <= maxSlides; i++) {
-                    const dot = document.createElement('button');
-                    dot.type = 'button';
-                    dot.className = i === currentCard ? 'active' : '';
-                    dot.addEventListener('click', () => {
-                        currentCard = i;
-                        updateTimeline();
-                    });
-                    dotsContainer.appendChild(dot);
-                }
-            }
+            isTransitioning = true;
             
-            function updateTimeline() {
-                const visibleCards = getVisibleCards();
-                const maxSlides = cards.length - visibleCards;
-                
-                // Ensure currentCard doesn't exceed maxSlides
-                if (currentCard > maxSlides) {
-                    currentCard = maxSlides;
-                }
-                
-                track.style.transform = `translateX(calc(-${currentCard} * (calc(100% / ${visibleCards}) + var(--spacing-6))))`;
-                
-                // Update dots
-                const dots = dotsContainer.querySelectorAll('button');
-                dots.forEach((dot, index) => {
-                    dot.classList.toggle('active', index === currentCard);
-                });
-            }
-            
-            function nextCard() {
-                const visibleCards = getVisibleCards();
-                const maxSlides = cards.length - visibleCards;
-                currentCard = (currentCard + 1) % (maxSlides + 1);
-                updateTimeline();
-            }
-            
-            function prevCard() {
-                const visibleCards = getVisibleCards();
-                const maxSlides = cards.length - visibleCards;
-                currentCard = (currentCard - 1 + (maxSlides + 1)) % (maxSlides + 1);
-                updateTimeline();
-            }
-            
-            nextBtn.addEventListener('click', nextCard);
-            prevBtn.addEventListener('click', prevCard);
-            
-            // Handle window resize
-            window.addEventListener('resize', () => {
-                const visibleCards = getVisibleCards();
-                const maxSlides = cards.length - visibleCards;
-                
-                // Reset position if needed
-                if (currentCard > maxSlides) {
-                    currentCard = maxSlides;
-                }
-                
-                createDots();
-                updateTimeline();
+            // Update year buttons
+            yearButtons.forEach((btn, i) => {
+                btn.classList.toggle('active', i === index);
             });
+
+            // Update content
+            contentItems.forEach((item, i) => {
+                if (i === index) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+
+            currentIndex = index;
             
-            // Initialize
-            createDots();
-            updateTimeline();
+            // Scroll timeline to show current year (for mobile)
+            scrollToYear(index);
+            
+            // Reset transition flag after animation
+            setTimeout(() => {
+                isTransitioning = false;
+            }, 300);
+        }
+
+        // Scroll timeline to show specific year
+        function scrollToYear(index) {
+            if (!timelineLineContainer) return;
+            
+            const yearButton = yearButtons[index];
+            if (!yearButton) return;
+
+            const containerWidth = timelineLineContainer.clientWidth;
+            const rect = yearButton.getBoundingClientRect();
+            const containerRect = timelineLineContainer.getBoundingClientRect();
+            
+            // Calculate scroll position to center the button
+            const buttonOffset = (yearButton as HTMLElement).offsetLeft;
+            const scrollPosition = buttonOffset - (containerWidth / 2) + (rect.width / 2);
+            
+            timelineLineContainer.scrollTo({
+                left: scrollPosition,
+                behavior: 'smooth'
+            });
+        }
+
+        // Navigation functions
+        function goToPrevious() {
+            const newIndex = currentIndex > 0 ? currentIndex - 1 : yearButtons.length - 1;
+            showContent(newIndex);
+        }
+
+        function goToNext() {
+            const newIndex = currentIndex < yearButtons.length - 1 ? currentIndex + 1 : 0;
+            showContent(newIndex);
+        }
+
+        // Update navigation button visibility
+        function updateNavButtons() {
+            const isMobile = window.innerWidth <= 768;
+            
+            if (prevNav) {
+                (prevNav as HTMLElement).style.display = isMobile ? 'block' : 'none';
+            }
+            if (nextNav) {
+                (nextNav as HTMLElement).style.display = isMobile ? 'block' : 'none';
+            }
+        }
+
+        // Event listeners
+        yearButtons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                showContent(index);
+            });
         });
+
+        if (prevNav) {
+            prevNav.addEventListener('click', goToPrevious);
+        }
+
+        if (nextNav) {
+            nextNav.addEventListener('click', goToNext);
+        }
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            updateNavButtons();
+            scrollToYear(currentIndex);
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                goToPrevious();
+            } else if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                goToNext();
+            }
+        });
+
+        // Initialize the timeline
+        init();
     });
 </script>
