@@ -32,9 +32,10 @@ const { title } = Astro.props;
     --primary-orange: #ff6b35;
     --text-white: #ffffff;
     --text-gray: #cccccc;
-    --bg-dark: #1a1a1a;
-    --bg-darker: #0f0f0f;
+    --bg-dark: #000000;
+    --bg-darker: #000000;
     --accent-gold: #d4af37;
+    --logo-gray: #333333;
   }
 
   * {
@@ -125,5 +126,76 @@ const { title } = Astro.props;
   .btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+  }
+
+  /* Section with vertical header layout */
+  .section-with-vertical-header {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .vertical-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .vertical-title {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-white);
+    letter-spacing: 2px;
+  }
+
+  .vertical-line {
+    width: 2px;
+    height: 100px;
+    background: var(--text-white);
+  }
+
+  @media (max-width: 768px) {
+    .section-with-vertical-header {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .vertical-header {
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+
+    .vertical-title {
+      writing-mode: horizontal-tb;
+      text-orientation: mixed;
+      font-size: 2rem;
+    }
+
+    .vertical-line {
+      width: 60px;
+      height: 2px;
+    }
+  }
+
+  /* Background logo utility */
+  .bg-logo {
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.05;
+    z-index: 1;
+    pointer-events: none;
+    width: 300px;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    .bg-logo {
+      display: none;
+    }
   }
 </style>

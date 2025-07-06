@@ -1,35 +1,43 @@
 <section class="contact" id="contact">
+  <div class="contact-background">
+    <div class="bg-logo-placeholder"></div>
+  </div>
   <div class="container">
-    <div class="contact-content">
-      <div class="contact-form-section">
-        <h2 class="section-title">CONTACT</h2>
-        <form class="contact-form" action="#" method="post">
-          <div class="form-group">
-            <input type="text" name="name" placeholder="NAME" required />
-          </div>
-          <div class="form-group">
-            <input type="email" name="email" placeholder="EMAIL" required />
-          </div>
-          <div class="form-group">
-            <textarea name="message" placeholder="MESSAGE" rows="5" required></textarea>
-          </div>
-          <button type="submit" class="submit-btn">SEND</button>
-        </form>
+    <div class="section-with-vertical-header">
+      <div class="vertical-header">
+        <h2 class="vertical-title">CONTACT</h2>
+        <div class="vertical-line"></div>
       </div>
-      <div class="contact-info">
-        <div class="company-info">
-          <h3>MORADISPLAY</h3>
-          <div class="info-item">
-            <p>Via Cefalonia 7, 20124 Milano, Italy</p>
-          </div>
-          <div class="info-item">
-            <p>Tel: +39 02 6707 0334</p>
-          </div>
-          <div class="info-item">
-            <p>Email: info@moradisplay.com</p>
-          </div>
-          <div class="info-item">
-            <p>www.moradisplay.com</p>
+      <div class="contact-content">
+        <div class="contact-form-section">
+          <form class="contact-form" action="#" method="post">
+            <div class="form-group">
+              <input type="text" name="name" placeholder="NAME" required />
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" placeholder="EMAIL" required />
+            </div>
+            <div class="form-group">
+              <textarea name="message" placeholder="MESSAGE" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">SEND</button>
+          </form>
+        </div>
+        <div class="contact-info">
+          <div class="company-info">
+            <h3>MORADISPLAY</h3>
+            <div class="info-item">
+              <p>Via Cefalonia 7, 20124 Milano, Italy</p>
+            </div>
+            <div class="info-item">
+              <p>Tel: +39 02 6707 0334</p>
+            </div>
+            <div class="info-item">
+              <p>Email: info@moradisplay.com</p>
+            </div>
+            <div class="info-item">
+              <p>www.moradisplay.com</p>
+            </div>
           </div>
         </div>
       </div>
@@ -41,6 +49,25 @@
   .contact {
     padding: 6rem 0;
     background: var(--bg-darker);
+    position: relative;
+  }
+
+  .contact-background {
+    position: relative;
+  }
+
+  .bg-logo-placeholder {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 250px;
+    height: 180px;
+    background: var(--logo-gray);
+    opacity: 0.05;
+    z-index: 1;
+    pointer-events: none;
+    border-radius: 10px;
   }
 
   .contact-content {
@@ -48,20 +75,21 @@
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: start;
+    position: relative;
+    z-index: 2;
   }
 
-  .section-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--text-white);
-    margin-bottom: 2rem;
-    letter-spacing: 1px;
+  .contact-form-section {
+    display: flex;
+    justify-content: center;
   }
 
   .contact-form {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    width: 100%;
+    max-width: 400px;
   }
 
   .form-group {
@@ -72,7 +100,7 @@
   .form-group textarea {
     width: 100%;
     padding: 1rem;
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--bg-darker);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 5px;
     color: var(--text-white);
@@ -89,7 +117,7 @@
 
   .form-group input::placeholder,
   .form-group textarea::placeholder {
-    color: var(--text-gray);
+    color: var(--text-white);
     font-size: 0.9rem;
     letter-spacing: 0.5px;
   }
@@ -112,7 +140,9 @@
   }
 
   .contact-info {
-    padding-left: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .company-info h3 {
@@ -128,8 +158,9 @@
   }
 
   .info-item p {
-    color: var(--text-gray);
+    color: var(--primary-orange);
     line-height: 1.6;
+    font-size: 1.1rem;
   }
 
   @media (max-width: 768px) {
@@ -142,12 +173,12 @@
       gap: 3rem;
     }
     
-    .contact-info {
-      padding-left: 0;
+    .contact-form {
+      max-width: 100%;
     }
     
-    .section-title {
-      font-size: 2rem;
+    .bg-logo-placeholder {
+      display: none;
     }
   }
 </style>
