@@ -12,9 +12,9 @@ import logoGray from '../assets/logo-gray.png';
   </div>
   <div class="container">
     <div class="gallery-grid">
-      <div class="gallery-item">
+      <a class="gallery-item" href="#company">
         <div class="gallery-image-container">
-          <Image 
+          <Image
             src={img1}
             alt="Exhibition Stand Design 1" 
             width="400" 
@@ -26,8 +26,8 @@ import logoGray from '../assets/logo-gray.png';
         <div class="gallery-label">
           <span>COMPANY</span>
         </div>
-      </div>
-      <div class="gallery-item">
+      </a>
+      <a class="gallery-item" href="#timeline">
         <div class="gallery-image-container">
           <Image 
             src={img2}
@@ -41,8 +41,8 @@ import logoGray from '../assets/logo-gray.png';
         <div class="gallery-label">
           <span>PROJECT</span>
         </div>
-      </div>
-      <div class="gallery-item">
+      </a>
+      <a class="gallery-item" href="#contact">
         <div class="gallery-image-container">
           <Image 
             src={img3}
@@ -56,7 +56,7 @@ import logoGray from '../assets/logo-gray.png';
         <div class="gallery-label">
           <span>CONTACT</span>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </section>
@@ -83,6 +83,7 @@ import logoGray from '../assets/logo-gray.png';
     overflow: hidden;
     transition: transform 0.3s ease;
     aspect-ratio: 3/4;
+    cursor: pointer;
   }
 
   .gallery-item:hover {
@@ -150,10 +151,6 @@ import logoGray from '../assets/logo-gray.png';
 
     .gallery-label span {
       font-size: 1.2rem;
-    }
-
-    .bg-logo-placeholder {
-      display: none;
     }
   }
 

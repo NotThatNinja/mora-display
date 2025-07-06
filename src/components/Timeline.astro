@@ -50,11 +50,14 @@ const timelineData = [
     "description": "Our projects extended to cultural, fashion, and food-related events: ISPO in Munchen, AMBIENTE in Frankfurt, MIDO in Milano, Cosmopack.prof. in Bologna, ECR in Vienna, BOOKFAIR in Leipzig, SILMO in Paris, AMWC in Monte Carlo."
   }
 ];
+
+import { Image } from 'astro:assets';
+import logoGray from '../assets/logo-gray.png';
 ---
 
 <section class="timeline" id="timeline">
   <div class="timeline-background">
-    <div class="bg-logo-placeholder"></div>
+    <Image src={logoGray} alt="" class="bg-logo" />
   </div>
   <div class="container">
     <div class="section-with-vertical-header">
@@ -207,24 +210,6 @@ const timelineData = [
     padding: 6rem 0;
     background: var(--bg-dark);
     position: relative;
-  }
-
-  .timeline-background {
-    position: relative;
-  }
-
-  .bg-logo-placeholder {
-    position: absolute;
-    right: 10%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 300px;
-    height: 200px;
-    background: var(--logo-gray);
-    opacity: 0.05;
-    z-index: 1;
-    pointer-events: none;
-    border-radius: 10px;
   }
 
   .timeline-content {
@@ -381,10 +366,6 @@ const timelineData = [
 
     .timeline-detail-description {
       font-size: 1rem;
-    }
-
-    .bg-logo-placeholder {
-      display: none;
     }
   }
 </style>

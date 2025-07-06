@@ -1,6 +1,11 @@
+---
+import { Image } from 'astro:assets';
+import logoGray from '../assets/logo-gray.png';
+---
+
 <section class="contact" id="contact">
   <div class="contact-background">
-    <div class="bg-logo-placeholder"></div>
+    <Image src={logoGray} alt="" class="bg-logo" />
   </div>
   <div class="container">
     <div class="section-with-vertical-header">
@@ -67,24 +72,6 @@
     padding: 10rem 0;
     background: var(--bg-darker);
     position: relative;
-  }
-
-  .contact-background {
-    position: relative;
-  }
-
-  .bg-logo-placeholder {
-    position: absolute;
-    right: 5%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 250px;
-    height: 180px;
-    background: var(--logo-gray);
-    opacity: 0.05;
-    z-index: 1;
-    pointer-events: none;
-    border-radius: 10px;
   }
 
   .contact-content {
@@ -220,10 +207,6 @@
     
     .contact-form {
       max-width: 100%;
-    }
-    
-    .bg-logo-placeholder {
-      display: none;
     }
   }
 </style>

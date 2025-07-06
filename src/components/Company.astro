@@ -1,4 +1,12 @@
+---
+import { Image } from 'astro:assets';
+import logoGray from '../assets/logo-gray.png';
+---
+
 <section class="company" id="company">
+  <div class="company-background">
+    <Image src={logoGray} alt="" class="bg-logo" />
+  </div>
   <div class="container">
     <div class="section-with-vertical-header">
       <div class="vertical-header">
@@ -34,6 +42,7 @@
   .company {
     padding: 6rem 0;
     background: var(--bg-darker);
+    position: relative;
   }
 
   .company-content {
