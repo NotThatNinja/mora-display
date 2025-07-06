@@ -1,0 +1,153 @@
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-content">
+      <div class="contact-form-section">
+        <h2 class="section-title">CONTACT</h2>
+        <form class="contact-form" action="#" method="post">
+          <div class="form-group">
+            <input type="text" name="name" placeholder="NAME" required />
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" placeholder="EMAIL" required />
+          </div>
+          <div class="form-group">
+            <textarea name="message" placeholder="MESSAGE" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">SEND</button>
+        </form>
+      </div>
+      <div class="contact-info">
+        <div class="company-info">
+          <h3>MORADISPLAY</h3>
+          <div class="info-item">
+            <p>Via Cefalonia 7, 20124 Milano, Italy</p>
+          </div>
+          <div class="info-item">
+            <p>Tel: +39 02 6707 0334</p>
+          </div>
+          <div class="info-item">
+            <p>Email: info@moradisplay.com</p>
+          </div>
+          <div class="info-item">
+            <p>www.moradisplay.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact {
+    padding: 6rem 0;
+    background: var(--bg-darker);
+  }
+
+  .contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .form-group {
+    position: relative;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    color: var(--text-white);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-orange);
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+  }
+
+  .submit-btn {
+    padding: 1rem 2rem;
+    background: var(--primary-orange);
+    color: var(--text-white);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .submit-btn:hover {
+    background: #e55a2b;
+  }
+
+  .contact-info {
+    padding-left: 2rem;
+  }
+
+  .company-info h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-orange);
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+  }
+
+  .info-item {
+    margin-bottom: 1rem;
+  }
+
+  .info-item p {
+    color: var(--text-gray);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .contact {
+      padding: 4rem 0;
+    }
+    
+    .contact-content {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    
+    .contact-info {
+      padding-left: 0;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+    }
+  }
+</style>
