@@ -3,15 +3,12 @@ import { Image } from 'astro:assets';
 import img1 from '../assets/gallery/1.jpg';
 import img2 from '../assets/gallery/2.jpg';
 import img3 from '../assets/gallery/3.jpg';
-// You'll need to add a gray logo asset
-// import logoGray from '../assets/logo-gray.png';
+import logoGray from '../assets/logo-gray.png';
 ---
 
 <section class="gallery" id="gallery">
   <div class="gallery-background">
-    <!-- Background logo - uncomment when you have the gray logo asset -->
-    <!-- <img src={logoGray} alt="" class="bg-logo" /> -->
-    <div class="bg-logo-placeholder"></div>
+    <Image src={logoGray} alt="" class="bg-logo" />
   </div>
   <div class="container">
     <div class="gallery-grid">
@@ -69,24 +66,6 @@ import img3 from '../assets/gallery/3.jpg';
     padding: 6rem 0;
     background: var(--bg-dark);
     position: relative;
-  }
-
-  .gallery-background {
-    position: relative;
-  }
-
-  .bg-logo-placeholder {
-    position: absolute;
-    right: 10%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 300px;
-    height: 200px;
-    background: var(--logo-gray);
-    opacity: 0.05;
-    z-index: 1;
-    pointer-events: none;
-    border-radius: 10px;
   }
 
   .gallery-grid {
@@ -165,10 +144,6 @@ import img3 from '../assets/gallery/3.jpg';
     .gallery-label span {
       writing-mode: horizontal-tb;
       text-orientation: mixed;
-    }
-
-    .bg-logo-placeholder {
-      display: none;
     }
   }
 </style>
