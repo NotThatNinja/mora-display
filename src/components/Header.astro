@@ -1,5 +1,6 @@
 ---
-// Header component
+import { Image } from 'astro:assets';
+import logo from '../assets/logo.png';
 ---
 
 <header class="header">
@@ -13,11 +14,37 @@
         <a href="#contact" class="nav-link">CONTACT</a>
       </div>
       <div class="nav-logo">
-        <a href="#hero">MORADISPLAY</a>
+        <a href="#hero" class="logo-link">
+          <Image src={logo} alt="MORA DISPLAY Logo" class="logo" />
+        </a>
       </div>
     </nav>
+    <div class="mobile-menu-toggle" id="mobileMenuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </div>
 </header>
+
+<script>
+  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+  const nav = document.querySelector('.nav');
+  
+  mobileMenuToggle?.addEventListener('click', () => {
+    nav?.classList.toggle('mobile-open');
+    mobileMenuToggle.classList.toggle('active');
+  });
+
+  // Close mobile menu when clicking on nav links
+  const navLinks = document.querySelectorAll('.nav-link');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      nav?.classList.remove('mobile-open');
+      mobileMenuToggle?.classList.remove('active');
+    });
+  });
+</script>
 
 <style>
   .header {
@@ -69,12 +96,40 @@
     color: var(--primary-orange);
   }
 
-  .nav-logo a {
-    color: var(--text-white);
+  .logo-link {
     text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: 2px;
+  }
+
+  .logo {
+    width: auto;
+    height: 100px;
+  }
+
+  .mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+    padding: 0.5rem;
+  }
+
+  .mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--text-white);
+    transition: all 0.3s ease;
+  }
+
+  .mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+
+  .mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
   }
 
   @media (max-width: 768px) {
@@ -82,17 +137,46 @@
       padding: 1rem 0;
     }
 
+    .container {
+      position: relative;
+    }
+
+    .mobile-menu-toggle {
+      display: flex;
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
     .nav {
       flex-direction: column;
-      gap: 1rem;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.95);
+      padding: 2rem;
+      transform: translateY(-100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .nav.mobile-open {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
     }
 
     .nav-links {
-      gap: 2rem;
-      font-size: 0.9rem;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      text-align: center;
     }
 
-    .nav-logo a {
+    .nav-link {
       font-size: 1.2rem;
     }
   }

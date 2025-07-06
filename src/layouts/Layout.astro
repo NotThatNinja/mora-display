@@ -47,6 +47,7 @@ const { title } = Astro.props;
   html {
     font-family: 'Inter', sans-serif;
     scroll-behavior: smooth;
+    scroll-padding-top: 60px;
   }
 
   body {
@@ -134,12 +135,16 @@ const { title } = Astro.props;
     grid-template-columns: 200px 1fr;
     gap: 4rem;
     align-items: start;
+    min-height: 65vh;
   }
 
   .vertical-header {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 2rem;
+    height: 100%;
+    position: sticky;
+    top: 120px;
   }
 
   .vertical-title {
@@ -149,34 +154,39 @@ const { title } = Astro.props;
     font-weight: 700;
     color: var(--text-white);
     letter-spacing: 2px;
+    transform: rotate(180deg);
   }
 
   .vertical-line {
     width: 2px;
-    height: 100px;
+    height: 65vh;
     background: var(--text-white);
+    position: relative;
   }
 
   @media (max-width: 768px) {
     .section-with-vertical-header {
       grid-template-columns: 1fr;
       gap: 2rem;
+      min-height: auto;
     }
 
     .vertical-header {
       flex-direction: row;
       justify-content: flex-start;
+      position: static;
+      height: auto;
     }
 
     .vertical-title {
       writing-mode: horizontal-tb;
       text-orientation: mixed;
       font-size: 2rem;
+      transform: none;
     }
 
     .vertical-line {
-      width: 60px;
-      height: 2px;
+      display: none;
     }
   }
 

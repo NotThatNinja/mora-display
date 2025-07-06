@@ -9,6 +9,23 @@
         <div class="vertical-line"></div>
       </div>
       <div class="contact-content">
+        <div class="contact-info-mobile">
+          <div class="company-info">
+            <h3>MORADISPLAY</h3>
+            <div class="info-item">
+              <p>Via Cefalonia 7, 20124 Milano, Italy</p>
+            </div>
+            <div class="info-item">
+              <p>Tel: +39 02 6707 0334</p>
+            </div>
+            <div class="info-item">
+              <p>Email: info@moradisplay.com</p>
+            </div>
+            <div class="info-item">
+              <p>www.moradisplay.com</p>
+            </div>
+          </div>
+        </div>
         <div class="contact-form-section">
           <form class="contact-form" action="#" method="post">
             <div class="form-group">
@@ -18,12 +35,12 @@
               <input type="email" name="email" placeholder="EMAIL" required />
             </div>
             <div class="form-group">
-              <textarea name="message" placeholder="MESSAGE" rows="5" required></textarea>
+              <textarea name="message" placeholder="MESSAGE" rows="8" required></textarea>
             </div>
             <button type="submit" class="submit-btn">SEND</button>
           </form>
         </div>
-        <div class="contact-info">
+        <div class="contact-info-desktop">
           <div class="company-info">
             <h3>MORADISPLAY</h3>
             <div class="info-item">
@@ -47,7 +64,7 @@
 
 <style>
   .contact {
-    padding: 6rem 0;
+    padding: 10rem 0;
     background: var(--bg-darker);
     position: relative;
   }
@@ -77,6 +94,11 @@
     align-items: start;
     position: relative;
     z-index: 2;
+    padding-top: 2rem;
+  }
+
+  .contact-info-mobile {
+    display: none;
   }
 
   .contact-form-section {
@@ -107,6 +129,11 @@
     font-size: 1rem;
     font-family: inherit;
     transition: border-color 0.3s ease;
+    resize: vertical;
+  }
+
+  .form-group textarea {
+    min-height: 120px;
   }
 
   .form-group input:focus,
@@ -139,10 +166,14 @@
     background: #e55a2b;
   }
 
-  .contact-info {
+  .contact-info-desktop {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .company-info {
+    text-align: center;
   }
 
   .company-info h3 {
@@ -165,12 +196,26 @@
 
   @media (max-width: 768px) {
     .contact {
-      padding: 4rem 0;
+      padding: 6rem 0;
     }
     
     .contact-content {
       grid-template-columns: 1fr;
       gap: 3rem;
+      padding-top: 0;
+    }
+
+    .contact-info-mobile {
+      display: block;
+      order: -1;
+    }
+
+    .contact-info-desktop {
+      display: none;
+    }
+
+    .company-info {
+      text-align: left;
     }
     
     .contact-form {
