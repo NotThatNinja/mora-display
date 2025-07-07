@@ -14,6 +14,7 @@ import hero from '../assets/hero.png';
       class="hero-image"
     />
     <div class="hero-overlay"></div>
+    <div class="hero-fade"></div>
   </div>
   <div class="container">
     <div class="hero-content">
@@ -56,13 +57,31 @@ import hero from '../assets/hero.png';
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6);
     z-index: 0;
+  }
+
+  .hero-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 0.4) 30%,
+      rgba(0, 0, 0, 0.8) 70%,
+      rgba(0, 0, 0, 1) 100%
+    );
+    z-index: 1;
+    pointer-events: none;
   }
 
   .hero-content {
     text-align: center;
-    z-index: 1;
+    z-index: 2;
+    position: relative;
   }
 
   .hero-title {
@@ -74,16 +93,24 @@ import hero from '../assets/hero.png';
 
   .title-line {
     display: block;
-    color: var(--primary-orange);
+    color: var(--hero-orange);
+  }
+
+  .highlight {
+    color: var(--text-white);
   }
 
   @media (max-width: 768px) {
     .hero {
-      height: 80vh;
+      height: 70vh;
     }
     
     .hero-title {
       font-size: clamp(2rem, 8vw, 3rem);
+    }
+
+    .hero-fade {
+      height: 100px;
     }
   }
 </style>
